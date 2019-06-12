@@ -89,7 +89,7 @@
     [query-controls]]
    [:div.query-ui__output
     #_[query-output]
-    #_[q-results-tree/root]
+    [q-results-tree/root]
     [q-results-table/root]]
    [:div.query-ui__form
     [q-form/root]]])
