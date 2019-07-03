@@ -3,6 +3,7 @@
             [juxt.crux-ui.frontend.views.query.results-tree :as q-results-tree]
             [juxt.crux-ui.frontend.views.query.results-table :as q-results-table]
             [garden.core :as garden]
+            [garden.stylesheet :as gs]
             [re-frame.core :as rf]
             [juxt.crux-ui.frontend.views.codemirror :as cm]))
 
@@ -82,7 +83,12 @@
         :display :flex
         :color color-placeholder
         :align-items :center
-        :justify-content :center}])])
+        :justify-content :center}]
+      (gs/at-media {:max-width :1000px}
+        [:.q-output
+         {:grid-template "'main main' 1fr / minmax(200px, 300px) 1fr"}
+         [:&__side
+          {:display :none}]]))])
 
 (defn root []
   [:div.q-output

@@ -1,25 +1,32 @@
 (ns juxt.crux-ui.frontend.views.header
-  (:require [garden.core :as garden]))
+  (:require [garden.core :as garden]
+            [garden.stylesheet :as gs]))
 
 
 (def header-styles
-  [:style (garden/css
+  [:style
+   (garden/css
     [:.header
-      {:display "flex"
-       :justify-content "space-between"
-       :align-items "center"
+      {:display :flex
+       :justify-content :space-between
+       :align-items :center
        :padding "16px 42px"
        :width "100%"}
       [:&__logo
-        {:display "flex"
-         :justify-content "space-between"
+        {:display :flex
+         :justify-content :space-between
          :flex "0 0 200px"
-         :align-items "center"}]
+         :align-items :center}]
       [:&__links
        {:display "flex"
         :justify-content "space-between"
         :flex "0 0 250px"
-        :align-items "center"}]])])
+        :align-items "center"}]]
+    (gs/at-media {:max-width :1000px}
+      [:.header
+       {:padding "16px"}
+       [:&__links
+        {:display :none}]]))])
 
 
 (def tabs-styles

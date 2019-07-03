@@ -1,6 +1,7 @@
 (ns juxt.crux-ui.frontend.views.query.form
   (:require [re-frame.core :as rf]
             [garden.core :as garden]
+            [garden.stylesheet :as gs]
             [juxt.crux-ui.frontend.example-queries :as ex]
             [juxt.crux-ui.frontend.views.query.editor :as q-editor]
             [juxt.crux-ui.frontend.views.comps :as comps]))
@@ -38,6 +39,9 @@
        {:padding :8px}
        [:&:hover
         {:color :black}]]]
+     (gs/at-media {:max-width :1000px}
+       [:.examples
+        {:display :none}])
 
      [:.q-form
        {:position :relative

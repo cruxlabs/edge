@@ -1,6 +1,7 @@
 (ns juxt.crux-ui.frontend.views.query-ui
   (:require [re-frame.core :as rf]
             [garden.core :as garden]
+            [garden.stylesheet :as gs]
             [juxt.crux-ui.frontend.views.cluster-health :as cluster-health]
             [juxt.crux-ui.frontend.views.query.form :as q-form]
             [juxt.crux-ui.frontend.views.query.output :as q-output]
@@ -43,7 +44,18 @@
 
       [:&__form
         {:padding "0px 0"
-         :grid-area :form}]]))
+         :grid-area :form}]]
+
+      (gs/at-media
+        {:max-width :1000px}
+        [:.query-ui
+         {:grid-template
+          "'output output' calc(100% - 330px)
+          'form form' 330px
+          / 1fr 1fr"
+          :margin-bottom 0}
+         [:&__controls
+          {:display :none}]])))
         ;:border "1px solid green"
 
 

@@ -68,7 +68,7 @@
      {:component-did-mount
       (fn [this]
         (let [el   (r/dom-node this)
-              opts #js {:lineNumbers true
+              opts #js {:lineNumbers false
                         :undoDepth 100000000
                         :historyEventDelay 1
                         :viewportMargin js/Infinity
